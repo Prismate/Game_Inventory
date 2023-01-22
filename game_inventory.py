@@ -1,11 +1,9 @@
 def display_inventory(inventory):
-    """Display the contents of the inventory in a simple way."""
     for item, count in inventory.items():
         print(f"{item}: {count}")
 
 
 def add_to_inventory(inventory, added_items):
-    """Add to the inventory dictionary a list of items from added_items."""
     for item in added_items:
         if item in inventory:
             inventory[item] += 1
@@ -14,7 +12,6 @@ def add_to_inventory(inventory, added_items):
 
 
 def remove_from_inventory(inventory, removed_items):
-    """Remove from the inventory dictionary a list of items from removed_items."""
     for item in removed_items:
         if item in inventory:
             inventory[item] -= 1
@@ -23,10 +20,6 @@ def remove_from_inventory(inventory, removed_items):
 
 
 def print_table(inventory, order=None):
-    """
-    Display the contents of the inventory in an ordered, well-organized table with
-    each column right-aligned.
-    """
     inventory = {'rope': 1, 'torch': 6, 'blanket': 3}
 
     item_title = "item name"
@@ -61,8 +54,6 @@ def print_table(inventory, order=None):
 
 
 def import_inventory(inventory, filename="import_inventory.csv"):
-    """Import new inventory items from a CSV file."""
-
     try:
         with open(filename) as file:
             for line in file:
@@ -73,8 +64,6 @@ def import_inventory(inventory, filename="import_inventory.csv"):
 
 
 def export_inventory(inventory, filename="export_inventory.csv"):
-    """Export the inventory into a CSV file."""
-
     outputs = []
 
     for item, count in inventory.items():
